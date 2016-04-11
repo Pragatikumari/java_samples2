@@ -1,0 +1,80 @@
+package permutation3;
+
+import java.util.Scanner;
+
+public class day1001 {
+	
+	public static void main(String args[])
+	{
+		char[] s= new char[10];
+		String s1=new String();
+		
+		System.out.println("enter any word");
+		Scanner imp = new Scanner(System.in);
+		s1=imp.next();
+		int c= s1.length(),i=0;
+		
+		while(i!=c)
+		{
+		s[i]=s1.charAt(i);
+			i++;
+		}
+		
+		int flag =-1;	
+
+	int count3=0,y=1;
+//for(i=1;i<=c;i++)
+	 
+//	{
+		for(int j=c;j>=1;j--)
+	{
+	y = y * j;
+	// y=y+x;
+	} 
+		int lp=0; int pr;
+		
+		int k=0;
+		int m1=c-1,count=0,m2;
+		  int count2=0,ls=y/c;
+		  System.out.println("la="+ls);
+		while(k!=y)     // for deciding number of words
+		{
+	       
+			System.out.print("k="+k+"and yis ="+y);
+			pr=0;
+			
+	
+			
+			
+			
+	 		while((lp+pr)!=(c))  //for deciding where to give new lone
+	 		{
+	 		 System.out.print(s[pr]);
+	 		 pr++;
+	 			
+	 	    }
+	 		System.out.print("\n");
+	 	k++;count++;
+	 	
+	 	if(count<=ls)
+	 	{
+	 		char temp= s[m1];
+	 		s[m1]=s[m1-1];
+	 		s[m1-1]=temp;
+	 		m1--;
+	 		if(m1==1)
+	 			m1=c-1;
+	 	}
+	        
+	     	
+		else
+		{
+		   	char temp=s[0];
+		   	s[0]=s[1];
+		   	s[1]=temp;
+		   	count=0;
+		}
+	 	
+		}
+	}
+}
